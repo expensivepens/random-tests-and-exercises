@@ -105,3 +105,11 @@ const contructorArray = new Array(5); // Initializes with 5 empty elements
 console.log(typeof literalArray);  //  object
 console.log(Array.isArray(literalArray));  // true
 console.log(literalArray instanceof Array);  // true
+
+//////////////////////////////////////////////////
+
+const arrayHooray = [1, 2, 3, 4, 5];
+console.log(arrayHooray.toString());
+delete arrayHooray[2];
+console.log(arrayHooray.toString());
+console.log(typeof arrayHooray[2]);
