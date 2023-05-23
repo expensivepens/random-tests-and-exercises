@@ -38,3 +38,77 @@ console.log(array1[3]); // what (all element index numbers have been shifted up 
 
 array1.shift(array1[3]);
 console.log(array1.join(" "));
+
+//////////////////////////////////////////////
+
+const hotDrinks = ["coffee", "tea", "cocoa", "herbal infusions"];
+const coldDrinks = ["water", "soda", "fruit juice"];
+const drinks = hotDrinks.concat(coldDrinks);  
+console.log("A list of drinks: " + drinks.join(", "));  // A list of drinks: coffee, tea, cocoa, herbal infusions, water, soda, fruit juice
+const unevenNumbers = [1, 3, 5, 7, 9];
+const evenNumbers = [2, 4, 6, 8];
+const allNumbers = unevenNumbers.concat(evenNumbers);
+console.log(allNumbers.join(" ")); // 1 3 5 7 9 2 4 6 8
+const drinksAndNumbers = hotDrinks.concat(coldDrinks, unevenNumbers, evenNumbers);
+console.log(drinksAndNumbers.join(" ")); // coffee tea cocoa herbal infusions water soda fruit juice 1 3 5 7 9 2 4 6 8
+const drinksAndNumbersAndAString = drinksAndNumbers.concat("And a final string");
+console.log(drinksAndNumbersAndAString.join(" ")); // coffee tea cocoa herbal infusions water soda fruit juice 1 3 5 7 9 2 4 6 8 And a final string
+const drinksAndNumbersAndANumber = drinksAndNumbers.concat(6000);
+console.log(drinksAndNumbersAndANumber.join(" ")); //coffee tea cocoa herbal infusions water soda fruit juice 1 3 5 7 9 2 4 6 8 6000
+
+///////////////////////////////////////////////
+
+const allNumbersInOrder = [];
+for (i = 0; i < unevenNumbers.length ; i++){
+    allNumbersInOrder.push(unevenNumbers[i]);
+    allNumbersInOrder.push(evenNumbers[i]);
+}
+console.log(allNumbersInOrder.join(" "));
+
+//////////////////////////////////////////////////
+
+const arrayWithSubArray = [[0,1], [2,3], [4,5]];
+console.log(arrayWithSubArray.join(", ")); // 0,1, 2,3, 4,5
+const arrayWithSubArrayFlattenned = arrayWithSubArray.flat(); // extracts all the subarrays
+console.log(arrayWithSubArrayFlattenned.join(", ")); // 0, 1, 2, 3, 4, 5
+
+//////////////////////////////////////////////////
+
+const spliceTest = ["My", "name", "Hello", "I'm", "Slim", "Shady"];
+console.log(spliceTest.splice(2, 2, "is")); // Array [ "Hello", "I'm" ] (returns a new array with the removed elements)
+console.log(spliceTest.join(" ")); // My name is Slim Shady
+
+const tooManyNumbers = [1, 2, 3, 4, 5, 5, 5, 6, 7];
+tooManyNumbers.splice(5, 2);
+console.log(tooManyNumbers.join(" ")); // 1 2 3 4 5 6 7 (the extra 5s were removed but nothing was added in their place);
+
+///////////////////////////////////////////////////
+
+const oneToNine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const fiveToNine = oneToNine.slice(4); // starts slicing at position 4 (included), slices to the end
+console.log(fiveToNine.join(" ")); // 5 6 7 8 9
+const twoToSix = oneToNine.slice(1, 6); // starts slicing at position 1 (included), stops slicing at position 6 (not included in the new array)
+console.log(twoToSix.join(" ")); // 2 3 4 5 6 
+
+////////////////////////////////////////////////////
+//looking for largest element in an array
+const minMax = [];
+let currentElement = 0;
+for (let i = 0; i < 20; i++){
+    minMax[i] = Math.floor(Math.random() * 100);
+    currentElement = minMax[i];
+    
+    currentElement = Math.floor(Math.random() * 100);
+    
+}
+console.log(minMax.join(" "));
+let biggestElement = 0;
+minMax.forEach(outputLargestElement);
+console.log(biggestElement);
+
+function outputLargestElement(value){
+    if(value > biggestElement){
+        biggestElement = value;
+    }
+}
+
