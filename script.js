@@ -109,7 +109,9 @@ console.log(literalArray instanceof Array);  // true
 //////////////////////////////////////////////////
 
 const arrayHooray = [1, 2, 3, 4, 5];
-console.log(arrayHooray.toString());
-delete arrayHooray[2];
-console.log(arrayHooray.toString());
-console.log(typeof arrayHooray[2]);
+console.log(arrayHooray.toString());  // 1,2,3,4,5
+delete arrayHooray[2]; // replaces 3 by undefined
+console.log(arrayHooray.toString()); // 1,2,,4,5
+console.log(typeof arrayHooray[2]); // undefined
+
+
