@@ -125,3 +125,17 @@ for(let i = 1; i < 20; i++){
 function createRandomNumber(){
     return Math.floor(Math.random() * 100);
 }
+
+/////////////////////////////////////////////////////////
+
+function returnMultiplesOfThree(int){
+    for(i = 1; i <= int; i++){
+        if(i % 3 == 0){
+            continue;
+        }
+        console.log(i);
+    }
+}
+
+//////////////////////////////////////////////////////////
+
