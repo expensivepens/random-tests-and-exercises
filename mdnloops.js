@@ -71,24 +71,57 @@ console.log(forLoopMessageIntro);
 
 //////////////////////////////////////////////////////////
 
-const listeDeContact = [
-    "SAMIA:0627507867",
-    "RAFAEL:0669969670",
-    "PATRICK:063256484684",
-    "CHRISTOPHE:0656844587",
-    "CHRISTINE:03154464545",
-];
+// const listeDeContact = [
+//     "SAMIA:0627507867",
+//     "RAFAEL:0669969670",
+//     "PATRICK:063256484684",
+//     "CHRISTOPHE:0656844587",
+//     "CHRISTINE:03154464545",
+// ];
 
-let finished = false;
-let recherche = prompt("Tapez le nom de la personne dont vous cherchez le numéro.").toLowerCase();
-for (const contact of listeDeContact){
-    const personneRecherchee = contact.split(":");
-    if(personneRecherchee[0].toLowerCase() == recherche){
-        console.log(personneRecherchee[1]);
-        finished = true;
-        break;
-    } 
+// let finished = false;
+// let recherche = prompt("Tapez le nom de la personne dont vous cherchez le numéro.").toLowerCase();
+// for (const contact of listeDeContact){
+//     const personneRecherchee = contact.split(":");
+//     if(personneRecherchee[0].toLowerCase() == recherche){
+//         console.log(personneRecherchee[1]);
+//         finished = true;
+//         break;
+//     } 
+// }
+// if(finished == false){
+//     console.log("Contact inconnu");
+// }
+
+///////////////////////////////////////////////////////
+
+const arrayOfRandomNumbers = [];
+
+arrayOfRandomNumbers[0] = createRandomNumber();
+for(let i = 1; i < 20; i++){
+    arrayOfRandomNumbers[i] = createRandomNumber();
+    for(let a = 0; a < i; a++){
+        if (arrayOfRandomNumbers[a] == arrayOfRandomNumbers[i]){
+            i--;
+            break;   
+        }     
+    }
 }
-if(finished == false){
-    console.log("Contact inconnu");
+
+console.log(arrayOfRandomNumbers.join(" "));
+
+let currentElementt = arrayOfRandomNumbers[0];
+for(let i = 1; i < 20; i++){
+    currentElementt = arrayOfRandomNumbers[i];
+    for(let a = 0; a < i; a++){
+        if (arrayOfRandomNumbers[a] == currentElementt){
+            console.log("true");
+        } else {
+            console.log("false");
+        }      
+    }
+}
+
+function createRandomNumber(){
+    return Math.floor(Math.random() * 100);
 }
