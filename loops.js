@@ -69,7 +69,3 @@ while(true){
 }
 
 ///////////////////////////////////////////////////////////////////
-let input;
-while(input == false){
-    let input = prompt("Name?");
-}
