@@ -11,6 +11,21 @@ document.querySelector("body").insertBefore(document.createElement("h1"), docume
 // own constants for code clarity, but is shows the way it works. 
 subContainer2.removeChild(subContainer2.lastElementChild); // removes the .remove-me paragraph from the DOM.
 
+paraOfSubContainer2.style.cssText = "color: green; font-size: 20px; font-weight: bold;";
+paraOfSubContainer2.style.color = "";  // removes color style and sets it back to browser default
+console.log(paraOfSubContainer2.style.color);  //  empty string
+console.log(paraOfSubContainer2.style.cssText);  //  color: green; font-size: 20px; font-weight: bold;
+
+const buttonContainer = document.createElement("div");   // creates a new div
+buttonContainer.setAttribute("class", "button-container");   // sets its class attribute to "button-container"
+const button = document.createElement("button"); // creates a new button
+console.log(buttonContainer.getAttribute("class")); // button-container
+console.log(button.getAttribute("disabled"));  // null
+buttonContainer.appendChild(button);  // adds the new button element to the button-container div
+document.body.appendChild(buttonContainer); // adds the button-container div(which now contains the button) to the <body>
+button.setAttribute("disabled", "true");  // sets the disabled attribute of button to true
+console.log(button.getAttribute("disabled"));  // true
+button.removeAttribute("disabled"); // removes the disabled attribute
 
 
 
