@@ -27,6 +27,28 @@ button.setAttribute("disabled", "true");  // sets the disabled attribute of butt
 console.log(button.getAttribute("disabled"));  // true
 button.removeAttribute("disabled"); // removes the disabled attribute
 
-
-
 paraOfSubContainer2.textContent = "new paragraph";
+
+
+subContainer2.removeChild(paraOfSubContainer2);
+buttonContainer.removeChild(button);
+
+redPara = document.createElement("p");
+redPara.textContent = "red";
+redPara.style.color = "red";
+document.body.appendChild(redPara);
+
+blueTitle = document.createElement("h3");
+blueTitle.textContent = "blue H3";
+blueTitle.style.color = "blue";
+document.body.appendChild(blueTitle);
+
+specialDiv = document.createElement("div");
+specialDiv.style.cssText = "border: black; background-color: pink;";
+divTitle = document.createElement("h1");
+divTitle.textContent = "I'm in a div";
+divPara = document.createElement("p");
+divPara.textContent = "Me too";
+specialDiv.appendChild(divTitle);
+specialDiv.appendChild(divPara);
+document.body.appendChild(specialDiv);
