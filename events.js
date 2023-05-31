@@ -6,3 +6,4 @@ for (i = 0; i < 2; i++){
     document.body.appendChild(buttons[i]);
 }
 
+buttons[0].onclick = () => alert("Method 2");
